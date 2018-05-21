@@ -1,0 +1,4 @@
+---
+# vars file for ansible-role-elk
+elk_logstash_ip: localhost
+elk_logstash_port: 5443

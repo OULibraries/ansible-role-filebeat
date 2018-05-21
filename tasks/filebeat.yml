@@ -1,0 +1,35 @@
+---
+
+- name: Ensure Elastic Repo Installed
+  yum_repository:
+    baseurl: https://artifacts.elastic.co/packages/6.x/yum
+    name: elastic
+    description: Elastic Co Repo
+    gpgkey: https://artifacts.elastic.co/GPG-KEY-elasticsearch
+
+- name: Install Filebeat from Elastic Repo
+  yum:
+    name: filebeat
+    state: present
+
+- name: Insert Filebeat Config Template
+  template:
+    src: filebeat.yml.j2
+    dest: /etc/filebeat/filebeat.yml
+    mode: 0644
+    owner: root
+    group: wheel
+    backup: yes
+
+- name: Enable Filebeat
+  systemd:
+    name: filebeat
+    daemon_reload: yes
+    enabled: yes
+
+- name: Start Filebeat
+  systemd:
+    name: filebeat
+    state: started
+
+
