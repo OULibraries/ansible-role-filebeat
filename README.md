@@ -1,7 +1,7 @@
 Role Name
 =========
 
-By default this will collect log files and output them to a locally installed Logstash. 
+By default this will collect log files and output them to Logstash. 
 
 Requirements
 ------------
