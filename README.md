@@ -11,8 +11,8 @@ Any pre-requisites that may not be covered by Ansible itself or the role should 
 Role Variables
 --------------
 Defualt Variables
-elk_logstash_ip: localhost
-elk_logstash_port: 5443
+* elk_logstash_ip: localhost
+* elk_logstash_port: 5443
 
 
 Dependencies
