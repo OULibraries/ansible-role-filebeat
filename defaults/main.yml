@@ -2,3 +2,6 @@
 # defaults file for ansible-role-elk
 elk_logstash_ip: localhost
 elk_logstash_port: 5443
+filebeat_paths:
+  - /var/log/messages
+

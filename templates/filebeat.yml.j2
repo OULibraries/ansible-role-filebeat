@@ -4,7 +4,9 @@ filebeat.prospectors:
 
   # Paths that should be crawled and fetched. Glob based paths.
   paths:
-    - /var/log/syslog-ng/*/*/*/*/*.log
+   {% for path in filebeat_paths %% }
+    - {{ path }}
+   { % endfor % } 
   enabled: true
   document-type: syslog
 
