@@ -1,5 +1,17 @@
 ---
 # defaults file for ansible-role-elk
+# These settings simplify using Filebeat with the Elastic Cloud (https://cloud.elastic.co/).
+
+# The cloud.id setting overwrites the `output.elasticsearch.hosts` and
+# `setup.kibana.host` options.
+# You can find the `cloud.id` in the Elastic Cloud web UI.
+
+# cloud.id: "ELASTIC_CLUSTER:ELASTIC_CLUSTER_KEY"
+
+# The cloud.auth setting overwrites the `output.elasticsearch.username` and
+# `output.elasticsearch.password` settings. The format is `<user>:<pass>`.
+# cloud.auth: "elastic:elastic"
+
 elk_logstash_ip: localhost
 elk_logstash_port: 5443
 filebeat_paths:
